@@ -35,5 +35,5 @@ delete classRoom.technologies.backend[2];
 console.log(classRoom);
 for (var elem in classRoom) {
     console.log (elem);
-    console.log (classRoom.Technologies.frontend);
+    // console.log (classRoom.Technologies.frontend);
 }

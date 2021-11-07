@@ -212,3 +212,4 @@ var mapFunc = animals2.map (function mapping (elem) {
 });
 
 console.log (mapFunc)
+
