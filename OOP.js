@@ -61,8 +61,9 @@ function makeAdder (a) {
     }
 }
 
-x = makeAdder (5);
-y = makeAdder (20);
+var x = makeAdder (5);
+console.log (x);
+var y = makeAdder (20);
 
 console.log ( x(6) );
 console.log ( y(7) );
