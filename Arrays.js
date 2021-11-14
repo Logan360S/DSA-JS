@@ -213,3 +213,20 @@ var mapFunc = animals2.map (function mapping (elem) {
 
 console.log (mapFunc)
 
+var mappedArray = [5,8,23,52,12];
+var filteredArray = [5,8,23,52,12];
+var reducedArray = [5,8,23,52,12];
+
+console.log (mappedArray.map (function (elem) {
+    return elem + 1;
+}));
+
+console.log (filteredArray.filter (function (elem) {
+    return elem < 20;
+}));
+
+console.log (reducedArray.reduce (function (p,c,i,a) {
+    var random = p + 10;
+    console.log (random + c);
+    return random + c;
+}));
