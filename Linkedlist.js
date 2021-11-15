@@ -1,34 +1,54 @@
-function LinkedList () {
-    var length = 0;
-    var head = null;
-
-    var Node = function (elem) {
-        this.element = elem;
-        this.next = null;
-    }
-
-    this.add = function (elem) {
-        var node = new Node (elem);
-
-        if (head === null) {
-            head = node;
-        } else {
-            var currentNode = head;
-
-            while (currentNode.next) {
-                currentNode = currentNode.next;
-            }
-
-            currentNode.next = node;
-        }
-
-    };
+function Node (data) {
+    this.data = data;
+    this.next = null;
 }
 
-var newLink = new LinkedList ();
-newLink.add (5);
-newLink.add ("cat");
-newLink.add ("hat");
-newLink.add (26);
+function linkedList () {
+    this.head = null;
+    this.size = 0;
+}
 
-console.log (newLink);
+linkedList.prototype.isEmpty = function () {
+    return this.size == 0;
+}
+
+linkedList.prototype.insert = function (value) {
+    if (this.head === null) {
+        var node = new Node (value);
+        this.head = node;
+    } else {
+        var node = new Node (value)
+        var headRef = this.head;
+        while (headRef.next != null) {
+            headRef = headRef.next;
+        }
+        headRef.next = node;
+    } 
+    this.size++;
+}
+
+linkedList.prototype.delete = function () {
+    if (this.head === null) {
+        return this.head;
+    } else {
+        var headRef = this.head;
+        console.log (headRef);
+        console.log (this.head);
+        while (headRef.next.next != null) {
+            console.log (headRef.data);
+            headRef = headRef.next;
+            
+        }
+        console.log (headRef.data);
+        headRef.next = null;
+    }
+    this.size--;
+}
+
+var link = new linkedList ();
+link.insert (1);
+link.insert ("Cat");
+link.insert (5);
+console.log (link);
+link.delete ();
+console.log (link);

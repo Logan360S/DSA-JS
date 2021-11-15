@@ -30,3 +30,31 @@ Human.prototype.toString = function () {
 
 Jack.toString ();
 
+function Animal (name, animalType) {
+    this.name = name;
+    this.animalType = animalType;
+}
+
+Animal.prototype.sayName = function () {
+    console.log(this.name);
+
+}
+
+Animal.prototype.sayAnimalType = function () {
+    console.log(this.animalType);
+}
+
+function Dog (name) {
+    Animal.call(this, name, "Cananie");
+};
+
+Dog.prototype = Object.create (Animal.prototype);
+
+var Cat = new Animal ("Cat","Feline");
+var Fido = new Dog ("Fido");
+console.log (Cat.name, Cat.animalType);
+console.log (Fido.name, Fido.animalType);
+Fido.sayAnimalType();
+Cat.sayName();
+
+
